@@ -1,0 +1,19 @@
+server:
+  port: 9411
+spring:
+  application:
+    name: sc-zipkin
+  profiles:
+    active: csdn
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+      instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+      ip-address: true
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false

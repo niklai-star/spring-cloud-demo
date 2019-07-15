@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: stream-producer
+  cloud:
+    stream:
+      bindings:
+        demo_input:
+          destination: demo
+        demo_output:
+          destination: demo
+      default-binder: kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: consumer1
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      client-id: producer1
+server:
+  port: 12000

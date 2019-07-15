@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cs-zuul
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+        ip-address: true
+server:
+  port: 9000
+
+ribbon:
+  ReadTimeout:  30000
+  ConnectTimeout:  15000
