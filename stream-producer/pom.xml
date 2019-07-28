@@ -12,7 +12,6 @@
         <groupId>com.demo</groupId>
         <artifactId>spring-cloud-demo</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <dependencies>
@@ -34,6 +33,9 @@
             <artifactId>spring-kafka</artifactId>
             <version>2.2.7.RELEASE</version>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <finalName>service</finalName>
+    </build>
 </project>
